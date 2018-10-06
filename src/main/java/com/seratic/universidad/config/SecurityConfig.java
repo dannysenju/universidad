@@ -26,13 +26,10 @@ import org.springframework.security.web.authentication.logout.HttpStatusReturnin
 @ComponentScan(basePackages = {"com.seratic.universidad.security"})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private static final Logger logger = LoggerFactory.getLogger(SecurityConfig.class);
-
     public static final String REMEMBER_ME_KEY = "rememberme_key";
 
     public SecurityConfig() {
         super();
-        logger.info("loading SecurityConfig ................................................ ");
     }
 
     @Autowired
