@@ -1,0 +1,7 @@
+target/
+bower_components/
+etc/
+nb-configuration.xml
+node/
+node_modules/
+

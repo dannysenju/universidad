@@ -1,0 +1,62 @@
+<div class="bg-extended">
+    <div class="align-vertical-center">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="well col-sm-offset-3 col-sm-6">
+
+                    <div class="well-heading well-primary">
+                        <h1>Ingresa con tu cuenta</h1>
+                    </div>
+
+                    <form class="well-body">
+
+                        <div class="alert alert-dismissible alert-info">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Error!</strong> <br/>
+                            <ul>
+                                <li><strong>steve / steve</strong> with admin role</li>
+                                <li><strong>bill / bill</strong> with user role</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="form-group label-floating"
+                             ng-class="{'has-error is-focused' : authenticationError}">
+                            <label class="control-label" for="login">Username</label>
+                            <input id="login" type="text" class="form-control" ng-model="username"
+                                   required="required"/>
+                            <span ng-show="authenticationError" class="help-block">
+                                tienes un error en tus credenciales revisalas.
+                            </span>
+
+                        </div>
+
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="password">Password</label>
+                            <input id="password" type="password" class="form-control" ng-model="password"
+                                   required="required"/>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="rememberMe"/><span> Recuerdame</span>
+                            </label>
+                        </div>
+
+                        <br/>
+
+                        <div class="col-sm-offset-3 col-sm-6">
+                            <button class="btn btn-lg btn-primary btn-block" ng-click="login()">
+                                Entrar
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
