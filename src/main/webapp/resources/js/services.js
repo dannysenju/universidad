@@ -113,6 +113,16 @@ myapp.service('TestsService', function ($log, $resource) {
         }
     }
 });
+myapp.service('CandidatesService', function ($log, $resource) {
+    return {
+        getAll: function () {
+            var candidateResource = $resource('candidates', {}, {
+                query: {method: 'GET', params: {}, isArray: true}
+            });
+            return candidateResource.query();
+        }
+    }
+});
 
 
 myapp.service('TokensService', function ($log, $resource) {

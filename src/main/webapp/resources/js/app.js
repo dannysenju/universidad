@@ -34,7 +34,14 @@ myapp.config(function ($routeProvider, USER_ROLES) {
         controller: 'TestsController',
         access: {
             loginRequired: true,
-            authorizedRoles: [USER_ROLES.test]
+            authorizedRoles: [USER_ROLES.all]
+        }
+    }).when('/candidates', {
+        templateUrl: 'partials/candidates.html',
+        controller: 'CandidatesController',
+        access: {
+            loginRequired: true,
+            authorizedRoles: [USER_ROLES.all]
         }
     }).when('/tokens', {
         templateUrl: 'partials/tokens.html',

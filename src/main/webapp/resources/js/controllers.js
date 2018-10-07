@@ -21,6 +21,9 @@ myapp.controller('LoginController', function ($rootScope, $scope, AuthSharedServ
     .controller('TestsController', function ($scope, $log, TestsService) {
         $scope.tests = TestsService.getAll();
     })
+    .controller('CandidatesController', function ($scope, $log, CandidatesService) {
+        $scope.candidates = CandidatesService.getAll();
+    })
     
 //    .controller('TestsController', function ($scope) {
 //        // init form

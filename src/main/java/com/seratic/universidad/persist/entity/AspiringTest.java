@@ -1,6 +1,5 @@
 package com.seratic.universidad.persist.entity;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -12,7 +11,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "aspiring_test")
-public class AspiringTest implements Serializable {
+public class AspiringTest {
 
     @Id
     @NotEmpty
