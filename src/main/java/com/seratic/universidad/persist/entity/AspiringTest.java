@@ -1,11 +1,15 @@
 package com.seratic.universidad.persist.entity;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -25,9 +29,10 @@ public class AspiringTest {
     @NotEmpty
     @Column(name = "quali_test", nullable = false)
     private double qualificationTest;
-
-    @Column(name = "date_test", columnDefinition = "TIMESTAMP")
-    private LocalDateTime dateTest;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "date_test")
+    private Date dateTest;
 
     public String getIdTest() {
         return idTest;
@@ -53,14 +58,13 @@ public class AspiringTest {
         this.qualificationTest = qualificationTest;
     }
 
-    public LocalDateTime getDateTest() {
+    public Date getDateTest() {
         return dateTest;
     }
 
-    public void setDateTest(LocalDateTime dateTest) {
+    public void setDateTest(Date dateTest) {
         this.dateTest = dateTest;
     }
-    
-    
+
 
 }

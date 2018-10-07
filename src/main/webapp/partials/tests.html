@@ -13,11 +13,45 @@
     <div id="userList" >
         <div class="list-group">
             <div class="list-group-item">
-                <div ng-repeat="test in tests | filter:query" class="list-group-item" style="margin-top:16px">
-                    
-                    
+
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading"><span class="lead">resultados </span></div>
+                    <div class="tablecontainer">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Id Prueba</th>
+                                    <th>Fecha</th>
+                                    <th>Detalle</th>
+                                    <th>Calificacion</th>
+                                    <th>Candidato</th>
+                                    <th width="20%"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="test in tests">
+                                    <td><span ng-bind="test.idTest"></span></td>
+                                    <td><span ng-bind="test.dateTest"></span></td>
+                                    <td><span ng-bind="test.detailTest"></span></td>
+                                    <td><span ng-bind="test.qualificationTest"></span></td>
+                                    <td><span ng-bind="test.email"></span></td>
+                                    <td>
+                                        <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit</button>  <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+            </div>
+
+
+            <div ng-repeat="test in tests| filter:query" class="list-group-item" style="margin-top:16px">
+
+
             </div>
         </div>
     </div>
+</div>
 </div>
