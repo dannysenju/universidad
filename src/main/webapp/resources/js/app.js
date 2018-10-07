@@ -29,12 +29,12 @@ myapp.config(function ($routeProvider, USER_ROLES) {
             loginRequired: true,
             authorizedRoles: [USER_ROLES.admin]
         }
-    }).when('/apiDoc', {
-        templateUrl: 'partials/apiDoc.html',
-        controller: 'ApiDocController',
+    }).when('/tests', {
+        templateUrl: 'partials/tests.html',
+        controller: 'TestsController',
         access: {
             loginRequired: true,
-            authorizedRoles: [USER_ROLES.all]
+            authorizedRoles: [USER_ROLES.test]
         }
     }).when('/tokens', {
         templateUrl: 'partials/tokens.html',

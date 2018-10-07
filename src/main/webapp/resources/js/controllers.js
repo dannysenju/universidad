@@ -18,17 +18,21 @@ myapp.controller('LoginController', function ($rootScope, $scope, AuthSharedServ
     .controller('UsersController', function ($scope, $log, UsersService) {
         $scope.users = UsersService.getAll();
     })
-    .controller('ApiDocController', function ($scope) {
-        // init form
-        $scope.isLoading = false;
-        $scope.url = $scope.swaggerUrl = 'v2/api-docs';
-        // error management
-        $scope.myErrorHandler = function (data, status) {
-            console.log('failed to load swagger: ' + status + '   ' + data);
-        };
-
-        $scope.infos = false;
+    .controller('TestsController', function ($scope, $log, TestsService) {
+        $scope.tests = TestsService.getAll();
     })
+    
+//    .controller('TestsController', function ($scope) {
+//        // init form
+//        $scope.isLoading = false;
+//        $scope.url = $scope.swaggerUrl = 'tests';
+//        // error management
+//        $scope.myErrorHandler = function (data, status) {
+//            console.log('failed to load swagger: ' + status + '   ' + data);
+//        };
+//
+//        $scope.infos = false;
+//    })
     .controller('TokensController', function ($scope, UsersService, TokensService, $q) {
 
         var browsers = ["Firefox", 'Chrome', 'Trident']

@@ -103,6 +103,16 @@ myapp.service('UsersService', function ($log, $resource) {
         }
     }
 });
+myapp.service('TestsService', function ($log, $resource) {
+    return {
+        getAll: function () {
+            var testResource = $resource('tests', {}, {
+                query: {method: 'GET', params: {}, isArray: true}
+            });
+            return testResource.query();
+        }
+    }
+});
 
 
 myapp.service('TokensService', function ($log, $resource) {

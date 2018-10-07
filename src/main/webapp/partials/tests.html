@@ -1,0 +1,23 @@
+<div class="well page">
+
+    <h3>Listado de Pruebas</h3>
+
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon glyphicon glyphicon-search"></span>
+            <input type="text" id="addon3a" class="form-control" placeholder="Buscar por" ng-model="query">
+        </div>
+    </div>
+
+
+    <div id="userList" >
+        <div class="list-group">
+            <div class="list-group-item">
+                <div ng-repeat="test in tests | filter:query" class="list-group-item" style="margin-top:16px">
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
