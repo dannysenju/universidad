@@ -30,7 +30,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="test in tests">
+                                <tr ng-repeat="test in tests | filter:query">
                                     <td><span ng-bind="test.idTest"></span></td>
                                     <td><span ng-bind="test.dateTest"></span></td>
                                     <td><span ng-bind="test.detailTest"></span></td>
