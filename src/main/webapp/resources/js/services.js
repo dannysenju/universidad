@@ -5,7 +5,7 @@ myapp.service('Session', function () {
         this.id = data.id;
         this.login = data.login;
         this.firstName = data.firstName;
-        this.lastName = data.familyName;
+        this.lastName = data.lastsName;
         this.email = data.email;
         this.userRoles = [];
         angular.forEach(data.authorities, function (value, key) {
@@ -38,20 +38,20 @@ myapp.service('AuthSharedService', function ($rootScope, $http, $resource, authS
                 password: password,
                 rememberme: rememberMe
             }), config)
-                .success(function (data, status, headers, config) {
-                    authService.loginConfirmed(data);
-                })
-                .error(function (data, status, headers, config) {
-                    $rootScope.authenticationError = true;
-                    Session.invalidate();
-                });
+                    .success(function (data, status, headers, config) {
+                        authService.loginConfirmed(data);
+                    })
+                    .error(function (data, status, headers, config) {
+                        $rootScope.authenticationError = true;
+                        Session.invalidate();
+                    });
         },
         getAccount: function () {
             $rootScope.loadingAccount = true;
             $http.get('security/account')
-                .then(function (response) {
-                    authService.loginConfirmed(response.data);
-                });
+                    .then(function (response) {
+                        authService.loginConfirmed(response.data);
+                    });
         },
         isAuthorized: function (authorizedRoles) {
             if (!angular.isArray(authorizedRoles)) {
@@ -63,7 +63,7 @@ myapp.service('AuthSharedService', function ($rootScope, $http, $resource, authS
             var isAuthorized = false;
             angular.forEach(authorizedRoles, function (authorizedRole) {
                 var authorized = (!!Session.login &&
-                Session.userRoles.indexOf(authorizedRole) !== -1);
+                        Session.userRoles.indexOf(authorizedRole) !== -1);
                 if (authorized || authorizedRole == '*') {
                     isAuthorized = true;
                 }

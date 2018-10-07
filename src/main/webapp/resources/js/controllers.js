@@ -44,7 +44,7 @@ myapp.controller('LoginController', function ($rootScope, $scope, AuthSharedServ
                 users.forEach(function (user) {
                     if (token.userLogin === user.login) {
                         token.firstName = user.firstName;
-                        token.familyName = user.familyName;
+                        token.lastsName = user.lastsName;
                         browsers.forEach(function (browser) {
                             if (token.userAgent.indexOf(browser) > -1) {
                                 token.browser = browser;

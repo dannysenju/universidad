@@ -7,7 +7,7 @@ var myapp = angular
 myapp.constant('USER_ROLES', {
     all: '*',
     admin: 'admin',
-    user: 'user'
+    test: 'test'
 });
 
 
